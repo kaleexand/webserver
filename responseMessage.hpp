@@ -34,6 +34,7 @@ class ResponseMessage
         std::string to_string(int n);
         ResponseMessage();
         ~ResponseMessage();
+        void generateAutoindex(std::string itl, char *buffer);
         
 
 };
