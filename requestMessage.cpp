@@ -30,3 +30,20 @@ void RequestMessage::parceHeaders(std::string headersToParce)
     while(std::getline(std::getline(iss, key, ':') >> std::ws, val))
         headers[key] = val.substr(0, val.find_first_of("\r\n"));
 }
+
+void RequestMessage::debugPrint()
+{
+    std::cout << std::endl << "REQUEST" << std::endl
+	<< "requestMessage.method = |" << this->method
+    << "| requestMessage.target = |" << this->target
+    << "| requestMessage.protocolVersion = |" << this->protocolVersion 
+	<< "|" << std::endl;
+
+	 for (std::map<std::string, std::string>::const_iterator it = this->headers.begin(); 
+        it != this->headers.end(); ++it)		
+        std::cout << "key = \"" << (*it).first << "\" value = \""
+					<< (*it).second << "\""<< std::endl;
+
+
+	std::cout << "requestMessage.body = |" << this->body << "|" << std::endl;;
+}

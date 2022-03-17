@@ -3,9 +3,8 @@
 #define REQUESTMESSAGE_HPP
 #include <map>
 #include <string>
-#include <istream>
+#include <iostream>
 #include <sstream>
-
 
 class RequestMessage
 {
@@ -14,12 +13,15 @@ private:
 
 public:
 	std::string method;
-	std::string target;
+	std::string	target;
 	std::string	protocolVersion;
 	std::map<std::string, std::string>	headers;
 
+	std::string	body;
 
 	void parceRequest(std::string requestToParce);
+
+	void debugPrint();
 };
 
 #endif

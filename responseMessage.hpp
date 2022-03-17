@@ -18,12 +18,13 @@ enum
 class ResponseMessage
 {
     private:
-        std::string bodyResponse;
-        std::string headerResponse;
-        std::string fullResponse;
-        std::string answerNum;
-        std::string contentType;
-        parser parser;
+        std::string                         bodyResponse;
+        std::string                         headerResponse;
+        std::string                         fullResponse;
+        std::string                         answerNum;
+        std::string                         contentType;
+        std::map<std::string, std::string>  types;
+        parser                              parser;
     public:
         std::string PrepareResponse(RequestMessage &requestMessage,std::vector<server> &servers);
         void        setResponse(std::string &resp);
@@ -35,6 +36,8 @@ class ResponseMessage
         ResponseMessage();
         ~ResponseMessage();
         void generateAutoindex(std::string itl, char *buffer);
+        void setType(std::string type, std::string standart);
+        void setTypes();
         
 
 };

@@ -1,0 +1,318 @@
+port = 5000 host = 127.0.0.1 client_max_body_size = 3000
+ server_names[0] = www.ya.ru server_names[1] = ya.com
+ errorPage[0].errorCode[0] = 404 errorPage[0] = custom_404.html
+ errorPage[1].errorCode[0] = 500 errorPage[1].errorCode[1] = 502 errorPage[1].errorCode[2] = 503 errorPage[1].errorCode[3] = 504 errorPage[1] = custom_50x.html
+ locations[0].locationURI =  locations[0].proxy_pass =  locations[0].root = ./YoupiBanane/ locations[0].autoindex = 1 locations[0].index =  locations[0].fastcgi_path =  locations[0].fastcgi_fileRequested =  locations[0].upload_store = 
+ locations[1].locationURI = /custom_404.html locations[1].proxy_pass =  locations[1].root = /usr/share/nginx/html locations[1].autoindex = 0 locations[1].index =  locations[1].fastcgi_path =  locations[1].fastcgi_fileRequested =  locations[1].upload_store = 
+ locations[2].locationURI = /custom_50x.html locations[2].proxy_pass =  locations[2].root = /usr/share/nginx/html locations[2].autoindex = 0 locations[2].index = html locations[2].fastcgi_path =  locations[2].fastcgi_fileRequested =  locations[2].upload_store = 
+ locations[3].locationURI = / locations[3].proxy_pass = http://localhost:8080/ locations[3].root = /Users/kalexand/Desktop/webserver-master/my_webserver/www/index.html locations[3].autoindex = 1 locations[3].index = index.html locations[3].fastcgi_path =  locations[3].fastcgi_fileRequested =  locations[3].upload_store = 
+ locations[4].locationURI = /upload locations[4].proxy_pass =  locations[4].root =  locations[4].autoindex = 0 locations[4].index =  locations[4].fastcgi_path =  locations[4].fastcgi_fileRequested =  locations[4].upload_store = /tmp
+ locations[5].locationURI = /q locations[5].proxy_pass =  locations[5].root =  locations[5].autoindex = 0 locations[5].index =  locations[5].fastcgi_path = localhost:9000 locations[5].fastcgi_fileRequested =  locations[5].upload_store = 
+ locations[6].locationURI = /autoindex locations[6].proxy_pass =  locations[6].root = /Users/kalexand/Desktop/webserver-master/my_webserver/ locations[6].autoindex = 0 locations[6].index =  locations[6].fastcgi_path = localhost:9000 locations[6].fastcgi_fileRequested =  locations[6].upload_store = 
+ locations[7].locationURI = /auth locations[7].proxy_pass =  locations[7].root = /Users/kalexand/Desktop/webserver-master/my_webserver/www/post.html locations[7].autoindex = 1 locations[7].index =  locations[7].fastcgi_path = localhost:9000 locations[7].fastcgi_fileRequested =  locations[7].upload_store = 
+
+port = 5005 host = 127.0.0.1 client_max_body_size = 3000
+ server_names[0] = www.ya.ru server_names[1] = ya.com
+ errorPage[0].errorCode[0] = 500 errorPage[0].errorCode[1] = 502 errorPage[0].errorCode[2] = 503 errorPage[0].errorCode[3] = 504 errorPage[0] = custom_50x.html
+ locations[0].locationURI =   /custom_404.html locations[0].proxy_pass =  locations[0].root = /usr/share/nginx/html locations[0].autoindex = 0 locations[0].index =  locations[0].fastcgi_path =  locations[0].fastcgi_fileRequested =  locations[0].upload_store = 
+ locations[1].locationURI =     /custom_50x.html locations[1].proxy_pass =  locations[1].root =    /usr/share/nginx/html locations[1].autoindex = 1 locations[1].index =   html locations[1].fastcgi_path =  locations[1].fastcgi_fileRequested =  locations[1].upload_store = 
+
+start poll
+start poll
+start poll
+Start receiving ...
+GET /errors/404.png HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+de-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchang
+requestMessage before parcing = 
+GET /errors/404.png HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+requestMessage after parcing = 
+key = "Accept" value = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+key = "Accept-Encoding" value = "gzip, deflate, br"
+key = "Accept-Language" value = "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6"
+key = "Connection" value = "keep-alive"
+key = "Host" value = "127.0.0.1:5000"
+key = "Sec-Fetch-Dest" value = "document"
+key = "Sec-Fetch-Mode" value = "navigate"
+key = "Sec-Fetch-Site" value = "none"
+key = "Sec-Fetch-User" value = "?1"
+key = "Upgrade-Insecure-Requests" value = "1"
+key = "User-Agent" value = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+key = "sec-ch-ua" value = "" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98""
+key = "sec-ch-ua-mobile" value = "?0"
+key = "sec-ch-ua-platform" value = ""macOS""
+requestMessage.method = |GET| requestMessage.target = |/errors/404.png| requestMessage.protocolVersion = |HTTP/1.1|
+KALEXAND: 
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /custom_404.html
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /custom_50x.html
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /upload
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /q
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /autoindex
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /auth
+KALEXAND tsrget: /errors/404.png
+start poll
+HTTP/1.1  OK
+Content-Length:0
+Content-Type: image/png
+
+
+start poll
+Start receiving ...
+GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:5000/errors/404.png
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+hrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http
+requestMessage before parcing = 
+GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:5000/errors/404.png
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+requestMessage after parcing = 
+key = "Accept" value = "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+key = "Accept-Encoding" value = "gzip, deflate, br"
+key = "Accept-Language" value = "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6"
+key = "Connection" value = "keep-alive"
+key = "Host" value = "127.0.0.1:5000"
+key = "Referer" value = "http://127.0.0.1:5000/errors/404.png"
+key = "Sec-Fetch-Dest" value = "image"
+key = "Sec-Fetch-Mode" value = "no-cors"
+key = "Sec-Fetch-Site" value = "same-origin"
+key = "Sec-Fetch-User" value = "?1"
+key = "Upgrade-Insecure-Requests" value = "1"
+key = "User-Agent" value = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+key = "sec-ch-ua" value = "" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98""
+key = "sec-ch-ua-mobile" value = "?0"
+key = "sec-ch-ua-platform" value = ""macOS""
+requestMessage.method = |GET| requestMessage.target = |/favicon.ico| requestMessage.protocolVersion = |HTTP/1.1|
+KALEXAND: 
+KALEXAND: /custom_404.html
+KALEXAND: /custom_50x.html
+KALEXAND: /
+KALEXAND: /upload
+KALEXAND: /q
+KALEXAND: /autoindex
+KALEXAND: /auth
+start poll
+
+start poll
+Start receiving ...
+GET /errors/404.png HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+de-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,
+requestMessage before parcing = 
+GET /errors/404.png HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+requestMessage after parcing = 
+key = "Accept" value = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+key = "Accept-Encoding" value = "gzip, deflate, br"
+key = "Accept-Language" value = "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6"
+key = "Cache-Control" value = "max-age=0"
+key = "Connection" value = "keep-alive"
+key = "Host" value = "127.0.0.1:5000"
+key = "Referer" value = "http://127.0.0.1:5000/errors/404.png"
+key = "Sec-Fetch-Dest" value = "document"
+key = "Sec-Fetch-Mode" value = "navigate"
+key = "Sec-Fetch-Site" value = "none"
+key = "Sec-Fetch-User" value = "?1"
+key = "Upgrade-Insecure-Requests" value = "1"
+key = "User-Agent" value = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+key = "sec-ch-ua" value = "" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98""
+key = "sec-ch-ua-mobile" value = "?0"
+key = "sec-ch-ua-platform" value = ""macOS""
+requestMessage.method = |GET| requestMessage.target = |/errors/404.png| requestMessage.protocolVersion = |HTTP/1.1|
+KALEXAND: 
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /custom_404.html
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /custom_50x.html
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /upload
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /q
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /autoindex
+KALEXAND tsrget: /errors/404.png
+KALEXAND: /auth
+KALEXAND tsrget: /errors/404.png
+start poll
+HTTP/1.1  OK
+Content-Length:0
+Content-Type: image/png
+
+
+start poll
+Start receiving ...
+start poll
+Start receiving ...
+GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:5000/errors/404.png
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+hrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http
+requestMessage before parcing = 
+GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:5000
+Connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:5000/errors/404.png
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+
+requestMessage after parcing = 
+key = "Accept" value = "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+key = "Accept-Encoding" value = "gzip, deflate, br"
+key = "Accept-Language" value = "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6"
+key = "Cache-Control" value = "max-age=0"
+key = "Connection" value = "keep-alive"
+key = "Host" value = "127.0.0.1:5000"
+key = "Referer" value = "http://127.0.0.1:5000/errors/404.png"
+key = "Sec-Fetch-Dest" value = "image"
+key = "Sec-Fetch-Mode" value = "no-cors"
+key = "Sec-Fetch-Site" value = "same-origin"
+key = "Sec-Fetch-User" value = "?1"
+key = "Upgrade-Insecure-Requests" value = "1"
+key = "User-Agent" value = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+key = "sec-ch-ua" value = "" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98""
+key = "sec-ch-ua-mobile" value = "?0"
+key = "sec-ch-ua-platform" value = ""macOS""
+requestMessage.method = |GET| requestMessage.target = |/favicon.ico| requestMessage.protocolVersion = |HTTP/1.1|
+KALEXAND: 
+KALEXAND: /custom_404.html
+KALEXAND: /custom_50x.html
+KALEXAND: /
+KALEXAND: /upload
+KALEXAND: /q
+KALEXAND: /autoindex
+KALEXAND: /auth
+start poll
+

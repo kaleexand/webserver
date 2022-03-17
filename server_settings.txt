@@ -7,7 +7,7 @@ server{
         error_page 500 502 503 504 /custom_50x.html;
         client_max_body_size 3000;
         location {
-    	        root /Users/kalexand/Desktop/webserv-master;
+    	        root ./YoupiBanane/;
     	        autoindex on;
         }
         location {
@@ -25,7 +25,7 @@ server{
                 index index.html;
                 autoindex on;
                 proxy_pass http://localhost:8080/;
-                root /Users/kalexand/Desktop/webserver_copy/www/index.html;
+                root /Users/kalexand/Desktop/webserver-master/my_webserver/www/index.html;
                 limit_except GET; 
                 }
 
@@ -40,13 +40,13 @@ server{
                 }
         location {
                 URI /autoindex;
-                root /Users/kalexand/Desktop/webserver_copy/;
+                root /Users/kalexand/Desktop/webserver-master/my_webserver/;
                 fastcgi_pass localhost:9000;
                 }
         location {
                 URI /auth;
                 limit_except GET;
-                root /Users/kalexand/Desktop/webserver_copy/www/post.html;
+                root /Users/kalexand/Desktop/webserver-master/my_webserver/www/post.html;
                 autoindex on;
                 fastcgi_pass localhost:9000;
                 }
