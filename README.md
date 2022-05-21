@@ -1,7 +1,5 @@
 # webserv 
 
-
-
 ## About
 
 Webserv is a project of the mandatory part of the cursus that I made with my friend [Helene Herin][2].
